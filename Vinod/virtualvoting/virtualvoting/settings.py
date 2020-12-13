@@ -84,12 +84,12 @@ WSGI_APPLICATION = 'virtualvoting.wsgi.application'
 
 DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'voting_db',
-            'USER': 'admin',
-            'PASSWORD': 'adminadmin',
-            'HOST': 'digital-voting.cvuonpypfy2r.us-east-2.rds.amazonaws.com',
-            'PORT': '3306',
+            'ENGINE': 'MYSQL',
+            'NAME': 'SOMESCHEMA',
+            'USER': 'USERNAME',
+            'PASSWORD': 'USERNAME',
+            'HOST': 'HOST',
+            'PORT': 'PORT',
         }
 }
 
