@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+        <title>Voting app</title>
+</head>
+
+<body>
+  <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="#">Guide lines</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+            </div>
+          </div>
+      </nav>
+    </header>
+    <div class="container-fluid">
+
+  <div class="row">
+        <div class="col-md-10">
+            <h5>Enter registered details for login</h5>
+        </div>
+        <div class="col-md-2 sub-nav">
+            <a href="{% url 'register' %}" class="btn btn-default-grey mr-2">Cancel</a>
+            <button class="btn btn-primary text-center" id="login_btn">Submit</button>
+        </div>
+    </div>
+    <hr/>
+    <div class="form-row">
+        {% csrf_token %}
+        <div class="col-md-7">
+            <div class="form-row form-group">
+                <div class="col-md-4">
+                    <label>Aadhar number</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id='aadhar' required>
+                    <span class="error hide" id="aadhar_error">Please provide your aadhar number</span>
+                </div>
+            </div>
+            <div class="form-row form-group">
+              <div class="col-md-4">
+                  <label>password</label>
+              </div>
+                <div class="col-md-8">
+                    <input type="password" class="form-control" id="password">
+                    <span class="error hide" id="password_error">Please provide password</span>
+                </div>
+            </div>
+            <!-- <div class="form-row form-group">
+                <div class="col-md-4">
+                    <label>click to take picture</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="date" class="form-control" id='purchaseDate'>
+                    <span class="error hide" id="purchaseDate_error">Please provide your date of picture</span>
+                </div>
+            </div> -->
+            <div class="col-md-5" style="border: 0px solid orange"></div>
+        </div>
+    </div><br/><br/><br/><br/>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="{% static 'js/login.js' %}" crossorigin="anonymous"></script>
+  </body>
+  </html>
